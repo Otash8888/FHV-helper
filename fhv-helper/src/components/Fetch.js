@@ -5,20 +5,23 @@ class Fetch extends Component {
     super(props);
     this.state = { fetched:{} };
   }
-  
+
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
     .then(function(response) {
       return response.json();
     })
-    .then(function(myJson) {
+    .then(myJson => {
+
       this.setState({
         fetched:JSON.stringify(myJson)
       })
+      console.log(this.state.fetched)
 
     })
   }
+
 
   render() {
 
@@ -26,7 +29,8 @@ class Fetch extends Component {
 
     return (
       <div>
-        <h1>"Airport Info" {this.state.fetched}</h1>
+        <h1>"Airport Info" </h1>
+        <p> {`${this.state.fetched}`} </p>
 
       </div>
     );
