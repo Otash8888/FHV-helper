@@ -6,7 +6,7 @@ class Fetch extends Component {
   }
   render() {
 
-    let airportInfoFetch = () => {
+    componentDidMount() {
       fetch('https://jsonplaceholder.typicode.com/todos/1')
       .then(function(response) {
         return response.json();
@@ -15,7 +15,7 @@ class Fetch extends Component {
         JSON.stringify(myJson);
       })
     }
-
+    
     return (
       <div>
         <h1>"Airport Info" {airportInfoFetch()}</h1>
