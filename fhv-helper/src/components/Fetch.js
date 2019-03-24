@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class Fetch extends Component {
-
+  state = {
+    fetched:{}
+  }
   render() {
 
     let airportInfoFetch = () => {
@@ -10,7 +12,7 @@ class Fetch extends Component {
         return response.json();
       })
       .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
+        JSON.stringify(myJson);
       })
     }
 
