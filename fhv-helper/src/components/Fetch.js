@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 class Fetch extends Component {
-  state = {
-    fetched:{}
+  constructor(props) {
+    super(props);
+    this.state = { fetched:{} };
   }
+  
 
   componentDidMount() {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -17,7 +19,7 @@ class Fetch extends Component {
 
     })
   }
-  
+
   render() {
 
 
