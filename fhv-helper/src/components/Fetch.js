@@ -3,6 +3,7 @@ import Viewer from './Viewer.js'
 
 let my_key = '4221d2-6285ff'
 let api_jfk_arrivals = `http://aviation-edge.com/v2/public/timetable?key=${my_key}&iataCode=JFK&type=arrival`
+let timeNow = new Date()
 
 class Fetch extends Component {
   constructor(props) {
@@ -23,7 +24,6 @@ class Fetch extends Component {
           return false
         } else {
           let timeArrival = new Date(flightObj.arrival.estimatedTime)
-          let timeNow = new Date()
           return timeNow < timeArrival
         }
 
@@ -40,18 +40,29 @@ class Fetch extends Component {
 
 
   render() {
-    let counter = 1
+    // per terminal info
+    let counterKey = 1
     let terminal4arrivals = this.state.jfk_arrivals.map((flightObj1) => {
       if (flightObj1.arrival.terminal === '4') {
-        return <Viewer terminal = {flightObj1} key={counter += 1} />
+        return <Viewer terminal = {flightObj1} key={counterKey += 1} />
       }
-
     })
 
+    let onePlusHour = this.state.jfk_arrivals.filter((flightObj1) => {
+      let timePlus = new Date()
+      timePlus.setHours(timePlus.getHours() + 1)
+      let timeArrival = new Date(flightObj1.arrival.estimatedTime)
+
+      return timeNow < timeArrival && timeArrival < timePlus
+
+    })
+    console.log(onePlusHour)
     return (
       <div>
         <h1>"Airport Info" </h1>
-        <h2>'Airline list'</h2>
+        <h3>{`Total JFK upcoming flights: ${this.state.jfk_arrivals.length}`}</h3>
+        <h3>{`Next hour flights number: ${onePlusHour.length}`}</h3>
+        <h2>'Terminal 4 Airline list'</h2>
         <ul>
           {terminal4arrivals}
         </ul>
