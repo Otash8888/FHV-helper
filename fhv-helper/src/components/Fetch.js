@@ -3,6 +3,7 @@ import Viewer from './Viewer.js'
 
 let my_key = '4221d2-6285ff'
 let api_jfk_arrivals = `http://aviation-edge.com/v2/public/timetable?key=${my_key}&iataCode=JFK&type=arrival`
+let api_lga_arrivals = `http://aviation-edge.com/v2/public/timetable?key=${my_key}&iataCode=LGA&type=arrival`
 let timeNow = new Date()
 
 class Fetch extends Component {
