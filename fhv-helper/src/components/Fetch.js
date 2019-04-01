@@ -14,6 +14,7 @@ class Fetch extends Component {
 
 
   componentDidMount() {
+    true ? api_jfk_arrivals : api_lga_arrivals
     fetch(api_jfk_arrivals)
     .then(function(response) {
       return response.json();
