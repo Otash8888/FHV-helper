@@ -37,11 +37,7 @@ class Fetch extends Component {
       })
 
       // for LGA setState
-      // this.setState({
-      //   lga_arrivals:upcomingFlights
-      // },() => {
-      //   console.log(this.state.lga_arrivals)
-      // })
+    
 
     })
   }
