@@ -35,10 +35,6 @@ class Fetch extends Component {
       },() => {
         console.log(this.state.jfk_arrivals)
       })
-
-      // for LGA setState
-    
-
     })
   }
 
