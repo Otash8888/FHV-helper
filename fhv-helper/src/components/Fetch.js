@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Viewer from './Viewer.js'
+import FlightCard from './FlightCard.js'
 
 let my_key = '4221d2-6285ff'
 let api_jfk_arrivals = `http://aviation-edge.com/v2/public/timetable?key=${my_key}&iataCode=JFK&type=arrival`
