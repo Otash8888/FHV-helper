@@ -12,10 +12,8 @@ class Fetch extends Component {
     this.state = { jfk_arrivals:[] };
   }
 
-
-  componentDidMount() {
-
-    //true ? api_jfk_arrivals : api_lga_arrivals
+   componentDidMount() {
+     
     fetch(api_jfk_arrivals)
     .then(function(response) {
       return response.json();
