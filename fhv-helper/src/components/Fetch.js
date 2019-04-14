@@ -63,7 +63,7 @@ class Fetch extends Component {
         <h1>"Airport Info" </h1>
         <h3>{`Total JFK upcoming flights: ${this.state.jfk_arrivals.length}`}</h3>
         <h3>{`Next hour flights number: ${onePlusHour.length}`}</h3>
-        <h3>'Terminal 4 Airline list'</h3>
+        <h3>Terminal 4 Airline list</h3>
         
         <ul>
           {terminal4arrivals}
