@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 const Viewer = ({ terminal })=> {
   console.log(terminal)
   return (
-    <li>{terminal.airline.name} </li>
+    <li> Airline: {terminal.airline.name} </li>
   )
 }
 
