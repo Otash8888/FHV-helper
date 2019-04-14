@@ -33,8 +33,6 @@ class Fetch extends Component {
       //saving upcomingFlights in state
       this.setState({
         jfk_arrivals:upcomingFlights
-      },() => {
-        console.log(this.state.jfk_arrivals)
       })
     })
   }
